@@ -1,0 +1,65 @@
+{
+  "models": [
+    {
+      "title": "Llama 3.2",
+      "provider": "ollama",
+      "model": "llama3.2"
+    },
+    {
+      "title": "Ollama",
+      "provider": "ollama",
+      "model": "AUTODETECT",
+      "systemMessage": "Vous êtes un expert en développement de logiciels. Vous donnez des réponses utiles et concises."
+    }
+  ],
+  "customCommands": [
+    {
+      "name": "Test",
+      "prompt": "{{{ input }}}\n\nRédigez un ensemble complet de tests unitaires pour le code sélectionné. Il doit être configuré, exécuter des tests qui vérifient l'exactitude, y compris les cas limites importants, et les cas où il ne fonctionne pas. Assurez-vous que les tests soient complets et sophistiqués. Donnez les tests comme sortie de chat, ne modifiez aucun fichier.",
+      "description": "Écrire des tests unitaires pour le code mis en surbrillance"
+    },
+    {
+      "name": "Explication",
+      "prompt": "{{{ input }}}\n\nExpliquez le code sélectionné étape par étape",
+      "description": "Explication du code"
+    }
+  ],
+  "slashCommands": [
+    {
+      "name": "edit",
+      "description": "Modifier le code en surbrillance"
+    },
+    {
+      "name": "comment",
+      "description": "Écrire des commentaires pour le code en surbrillance"
+    },
+    {
+      "name": "share",
+      "description": "Exporter la session de chat en cours vers Markdown",
+      "params": { "outputDir": "~/.continue/session-transcripts" }
+    },
+    {
+      "name": "cmd",
+      "description": "Générer une commande shell"
+    },
+    {
+      "name": "commit",
+      "description": "Générer un message de validation pour les modifications actuelles"
+    },
+    {
+      "name": "onboard",
+      "description": "Familiarise-moi avec la codebase du projet"
+    }
+  ],
+  "tabAutocompleteModel": {
+    "title": "qwen2.5-coder",
+    "provider": "ollama",
+    "model": "qwen2.5-coder"
+  },
+  "allowAnonymousTelemetry": true,
+  "embeddingsProvider": {
+    "provider": "ollama",
+    "model": "nomic-embed-text"
+  },
+  "docs": []
+}
